@@ -552,7 +552,7 @@ class OAuth2Validator(RequestValidator):
         )
 
         if request.grant_type == "client_credentials":
-            request.user = None
+            request.user = request.client.user
 
         # This comes from OAuthLib:
         # https://github.com/idan/oauthlib/blob/1.0.3/oauthlib/oauth2/rfc6749/tokens.py#L267
